@@ -26,9 +26,9 @@ Consideré que el primer paso necesario era convertir el archivo CSV en datos ma
 
 ```
 arrayData = [
-[ user_row1, entityId_row1, entityType_row1, eventType_row1]
-[ user_row2, entityId_row2, entityType_row2, eventType_row2]
-[ user_rowN, entityId_rowN, entityType_rowN, eventType_rowN]
+	[ user_row1, entityId_row1, entityType_row1, eventType_row1]
+	[ user_row2, entityId_row2, entityType_row2, eventType_row2]
+	[ user_rowN, entityId_rowN, entityType_rowN, eventType_rowN]
 ]
 
 ```
@@ -38,7 +38,7 @@ Ya pudiendo manipular los datos creé un diccionario donde las keys son los IDs 
 ```
 
 generalDict = {
-user1: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
-user2: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
-userN: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
+	user1: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
+	user2: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
+	userN: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
 }
