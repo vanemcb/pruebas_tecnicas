@@ -4,11 +4,15 @@
  * $ node scritp.js BrowsingEvents.csv
  */
 
-const args = process.argv.slice(-1)[0];
+const args = process.argv.slice(-1);
+console.log(`Running question #2 with args ${args}`)
+
+
+const name_file = process.argv.slice(-1)[0];
 const fs = require("fs");
 
 //Reading CSV file
-const document = fs.readFileSync(args).toString()
+const document = fs.readFileSync(name_file).toString()
 
 //Creating array with each row
 const arrayLines = document.split('\n')
@@ -80,5 +84,5 @@ const headers = 'productId,clicks,impressions,ctr\n'
 //Creating CVS file
 fs.appendFile('output.csv', headers + csvContent, function (err) {
   if (err) throw err;
-  console.log('Saved!');
+  console.log('output.csv file created');
 });
