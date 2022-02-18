@@ -22,4 +22,23 @@
 
 # Razonamiento
 
-_Escribir aquí los supuestos asumidos, reflexiones y explicaciones de la solución_
+Consideré que el primer paso necesario era convertir el archivo CSV en datos manipulables para Javascript, entonces creé un array donde cada fila es un array que contiene los elementos de cada fila del archivo CSV. A continuación muestro un ejemplo de la estructura:
+
+```
+arrayData = [
+			 [ user_row1, entityId_row1, entityType_row1, eventType_row1]
+			 [ user_row2, entityId_row2, entityType_row2, eventType_row2]
+			 [ user_rowN, entityId_rowN, entityType_rowN, eventType_rowN]
+			]
+
+```
+
+Ya pudiendo manipular los datos creé un diccionario donde las keys son los IDs de cada usuario y los values son diccionarios que almacenan los productos a los cuales se les dio click y los productos que fueron visitados. La estructura se puede ver a contonuación:
+
+```
+
+generalDict = {
+				user1: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
+				user2: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
+				userN: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
+			  }
