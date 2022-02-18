@@ -30,15 +30,22 @@ arrayData = [
 	[ user_row2, entityId_row2, entityType_row2, eventType_row2]
 	[ user_rowN, entityId_rowN, entityType_rowN, eventType_rowN]
 ]
-
 ```
 
 Ya pudiendo manipular los datos creé un diccionario donde las keys son los IDs de cada usuario y los values son diccionarios que almacenan los productos a los cuales se les dio click y los productos que fueron visitados. La estructura se puede ver a contonuación:
 
 ```
-
 generalDict = {
 	user1: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
 	user2: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
 	userN: {cliscks: [entityId1, entityId2, ...], visits: [entityId1, entityId2, ...]}
 }
+```
+Para crear este diccionario primero se hizo una lista de usuarios únicos.
+
+Ya teniendo este diccionario utilicé loops para recorrerlo y sumar la cantidad de clicks unícos y la cantidad de visitas únicas por cada producto.
+
+Para calcular el CTR dividí la cantidad de clicks entre el número de visitas de cada producto, algunos resultados daban "Infinity", esto debido a que había productos con clicks pero con cero visitas, creo que esto puede ser un error en los datos de entrada del archivo CSV, ya que considero que para darle click al producto, primero se debió haber visitado, es decir, si un producto tiene 1 o mas clicks debe tener al menos 1 visita.
+
+Por último creé el archivo de salida con los datos obtenidos anteriormente.
+
