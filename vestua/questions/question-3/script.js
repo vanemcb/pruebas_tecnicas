@@ -20,12 +20,16 @@ function parenthesisChecker(str) {
 
   let arrayBrackets = []
 
+  //Loop to traverse the input string
   for (let char of str) {
+
+    //Conditional to fill the array with the open brackets
     if (char == '(' || char == '[' || char == '{') {
       arrayBrackets.push(char)
       continue
     }
 
+    //Conditional to check if the open bracket is correctly closed
     switch (char) {
       case ')':
         if (arrayBrackets[arrayBrackets.length - 1] == '(') {
