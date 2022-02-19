@@ -82,7 +82,7 @@ let csvContent = finalArray.map(item => item.join(",")).join("\n");
 const headers = 'productId,clicks,impressions,ctr\n'
 
 //Creating CSV file
-fs.appendFile('output.csv', headers + csvContent, function (err) {
+fs.writeFile('output.csv', headers + csvContent, function (err) {
   if (err) throw err;
   console.log('output.csv file created');
 });

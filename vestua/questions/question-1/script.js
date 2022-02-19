@@ -3,7 +3,7 @@
  * This file would be executed with the following command (N=100):
  * $ node scritp.js 100
  */
-
+const fs = require("fs");
 const args = process.argv.slice(-1);
 console.log(`Running question #1 with args ${args}`)
 
@@ -31,4 +31,10 @@ function stairs(steps, N) {
   return combinations
 }
 
-console.log(stairs(steps, N))
+result = stairs(steps, N)
+
+//Creating txt file
+fs.writeFile('output.txt', String(result), function (err) {
+  if (err) throw err;
+  console.log('output.txt file created');
+});
