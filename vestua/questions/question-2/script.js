@@ -81,7 +81,7 @@ for (let product of arrayProductId) {
 let csvContent = finalArray.map(item => item.join(",")).join("\n");
 const headers = 'productId,clicks,impressions,ctr\n'
 
-//Creating CVS file
+//Creating CSV file
 fs.appendFile('output.csv', headers + csvContent, function (err) {
   if (err) throw err;
   console.log('output.csv file created');
